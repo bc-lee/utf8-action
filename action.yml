@@ -1,0 +1,6 @@
+name: 'utf8-action'
+description: 'Github action who cares about UTF-8 encoding'
+author: 'Byoungchan Lee <byoungchan.lee@gmx.com>'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'

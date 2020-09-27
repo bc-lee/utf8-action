@@ -1,0 +1,37 @@
+{
+  "name": "utf8-action",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Github action who cares about UTF-8 encoding",
+  "main": "lib/main.js",
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write **/*.ts",
+    "format-check": "prettier --check **/*.ts",
+    "lint": "eslint src/**/*.ts",
+    "package": "rm -rf dist && ncc build --source-map --license LICENSE && find dist -type f | xargs -n1 tools/dos2unix.py",
+    "test": "jest",
+    "all": "npm run build && npm run format && npm run lint && npm run package && npm test"
+  },
+  "author": "Byougchan Lee",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.2.5",
+    "utf-8-validate": "^5.0.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.10",
+    "@types/node": "^14.10.0",
+    "@typescript-eslint/parser": "^3.10.1",
+    "@vercel/ncc": "^0.23.0",
+    "eslint": "^7.8.1",
+    "eslint-plugin-github": "^4.1.1",
+    "eslint-plugin-jest": "^23.20.0",
+    "jest": "^24.9.0",
+    "jest-circus": "^26.4.2",
+    "js-yaml": "^3.14.0",
+    "prettier": "2.1.1",
+    "ts-jest": "^24.3.0",
+    "typescript": "^4.0.2"
+  }
+}
